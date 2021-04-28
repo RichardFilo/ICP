@@ -1,1 +1,3 @@
-# ICP
+ICP projekt
+Varianta 2: Editor a interpret hierarchicky strukturovaných funkčních bloků
+Autory: Richard Filo a ...
