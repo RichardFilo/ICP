@@ -20,7 +20,7 @@ public:
     std::vector<int> get_input_by_index(int index);
     std::vector<int> get_output_by_index(int index);
     int get_input_count();
-    
+
 
 protected:
     std::string name;
@@ -66,4 +66,6 @@ public:
     ~Block_dec(){}
     void do_operation();
 };
+
+enum Block_type { sum, sub, inc, dec };
 #endif // BLOCK_H

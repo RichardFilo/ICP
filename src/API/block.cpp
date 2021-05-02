@@ -101,7 +101,7 @@ void Block_sum::do_operation()
     if(this->inputs[0][0] &&  this->inputs[1][0])   //ak su obe definovane
     {
         this->outputs[0][1] = this->inputs[0][1] + this->inputs[1][1];  //spocitaj
-        this->outputs[0][0] = 1;    //a nastav vystup na definovany
+        this->outputs[0][0] = 2;    //a nastav vystup na definovany
     }
     else
     {
@@ -114,7 +114,7 @@ void Block_sub::do_operation()
     if(this->inputs[0][0] &&  this->inputs[1][0])   //ak su obe definovane
     {
         this->outputs[0][1] = this->inputs[0][1] - this->inputs[1][1];  //odcitaj
-        this->outputs[0][0] = 1;    //a nastav vystup na definovany
+        this->outputs[0][0] = 2;    //a nastav vystup na definovany
     }
     else
     {
@@ -127,7 +127,7 @@ void Block_inc::do_operation()
     if(this->inputs[0][0])   //ak je definovany
     {
         this->outputs[0][1] = this->inputs[0][1] + 1;  //inkrementuj
-        this->outputs[0][0] = 1;    //a nastav vystup na definovany
+        this->outputs[0][0] = 2;    //a nastav vystup na definovany
     }
     else
     {
@@ -140,7 +140,7 @@ void Block_dec::do_operation()
     if(this->inputs[0][0])   //ak je definovany
     {
         this->outputs[0][1] = this->inputs[0][1] - 1;  //dekrementuj
-        this->outputs[0][0] = 1;    //a nastav vystup na definovany
+        this->outputs[0][0] = 2;    //a nastav vystup na definovany
     }
     else
     {
