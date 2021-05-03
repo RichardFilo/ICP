@@ -6,6 +6,7 @@ Block_schema::Block_schema()
     this->blocks = {};
     this->junctions = {};
     this->event_calendar = {};
+    this->code_modification = "";
 }
 
 Block_schema::~Block_schema()
@@ -38,21 +39,25 @@ std::string Block_schema::add_block(Block_type type)
     case sum:
         ptr = new Block_sum;
         name = gen_name("SUM block");
+        this->code_modification += "\tschema.add_block(sum);\n";
         break;
 
     case sub:
         ptr = new Block_sub;
         name = gen_name("SUB block");
+        this->code_modification += "\tschema.add_block(sub);\n";
         break;
 
     case inc:
         ptr = new Block_inc;
         name = gen_name("INC block");
+        this->code_modification += "\tschema.add_block(inc);\n";
         break;
 
     case dec:
         ptr = new Block_dec;
         name = gen_name("DEC block");
+        this->code_modification += "\tschema.add_block(dec);\n";
         break;
     }
 
@@ -61,11 +66,22 @@ std::string Block_schema::add_block(Block_type type)
     return name;
 }
 
-void remove_junc_of_block(std::vector<std::pair<Port,Port>> &junctions, std::string block_name)
+void Block_schema::remove_junc_of_block(std::string block_name)
 {
-    for (auto it = junctions.begin(); it != junctions.end(); ) {
+    for (auto it = this->junctions.begin(); it != this->junctions.end(); ) {
         if ((*it).first.block_name == block_name || (*it).second.block_name == block_name) {
-            it = junctions.erase(it);
+            it = this->junctions.erase(it);
+        } else {
+            ++it;
+        }
+    }
+}
+
+void Block_schema::remove_event_of_block(std::string block_name)
+{
+    for (auto it = this->event_calendar.begin(); it != this->event_calendar.end(); ) {
+        if ((*it).first.block_name == block_name) {
+            it = this->event_calendar.erase(it);
         } else {
             ++it;
         }
@@ -74,11 +90,34 @@ void remove_junc_of_block(std::vector<std::pair<Port,Port>> &junctions, std::str
 
 void Block_schema::remove_block(std::string block_name)
 {
+    this->code_modification += "\tschema.remove_block(\"" + block_name + "\");\n";
     auto search =this->blocks.find(block_name);
     if(search != this->blocks.end()){
         delete this->blocks[block_name];
         this->blocks.erase(block_name);
-        remove_junc_of_block(this->junctions, block_name);
+        this->remove_junc_of_block(block_name);
+        this->remove_event_of_block(block_name);
+    }
+}
+
+void Block_schema::change_name_in_junctions(std::string pre_name, std::string new_name)
+{
+    for (auto it = this->junctions.begin(); it != this->junctions.end(); it++) {
+        if ((*it).first.block_name == pre_name) {
+            (*it).first.block_name = new_name;
+        }
+        if ((*it).second.block_name == pre_name) {
+            (*it).second.block_name = new_name;
+        }
+    }
+}
+
+void Block_schema::change_name_in_calendar(std::string pre_name, std::string new_name)
+{
+    for (auto it = this->event_calendar.begin(); it != this->event_calendar.end(); it++) {
+        if ((*it).first.block_name == pre_name) {
+            (*it).first.block_name = new_name;
+        }
     }
 }
 
@@ -92,10 +131,15 @@ int Block_schema::change_block_name(std::string block_name, std::string name)
         else if(search1 != this->blocks.end())  //ak uz existuje tak vrati chybu
             return 1;
         else{   //inac zmeni
+            this->code_modification += "\tschema.change_block_name(\"" + block_name + "\", \"" + name + "\");\n";
             this->blocks[block_name]->set_name(name);
             Block* ptr = this->blocks[block_name];
             this->blocks.erase(block_name);
             this->blocks[name] = ptr;
+
+            this->change_name_in_junctions(block_name, name);
+            this->change_name_in_calendar(block_name, name);
+
             return 0;
         }
     }
@@ -107,6 +151,7 @@ int Block_schema::set_block_input_by_index(int value, std::string block_name, in
     auto search =this->blocks.find(block_name);
     if(search != this->blocks.end()){
         if(this->blocks[block_name]->get_input_by_index(index)[0] != 2){
+            this->code_modification += "\tschema.set_block_input_by_index(" + std::to_string(value) + ", \"" + block_name + "\", " + std::to_string(index) + ");\n";
             this->blocks[block_name]->set_input_by_index({1, value}, index);
             Port port = {.block_name = block_name, .port_index = index};
             std::vector<int> input = {1, value};
@@ -156,6 +201,8 @@ int Block_schema::add_junction(std::string block1, int index_output1, std::strin
     if (exist) {
         return 1;
     } else {
+        this->code_modification += "\tschema.add_junction(\"" + block1 + "\", " + std::to_string(index_output1) + ", \"" + block2 + "\", " + std::to_string(index_input2) + ");\n";
+
         Port port1 = {.block_name = block1, .port_index = index_output1};
         Port port2 = {.block_name = block2, .port_index = index_input2};
         std::pair<Port, Port> new_junc = std::make_pair(port1, port2);
@@ -169,6 +216,17 @@ int Block_schema::add_junction(std::string block1, int index_output1, std::strin
     }
 }
 
+void Block_schema::remove_event_of_port(std::string block, int index_input)
+{
+    for (auto it = this->event_calendar.begin(); it != this->event_calendar.end(); ) {
+        if ((*it).first.block_name == block && (*it).first.port_index == index_input) {
+            it = this->event_calendar.erase(it);
+        } else {
+            ++it;
+        }
+    }
+}
+
 void Block_schema::remove_junction(std::string block1, int index_output1, std::string block2, int index_input2)
 {
     for (auto it = junctions.begin(); it != junctions.end(); ) {
@@ -178,6 +236,8 @@ void Block_schema::remove_junction(std::string block1, int index_output1, std::s
             ++it;
         }
     }
+    this->remove_event_of_port(block2, index_input2);
+    this->code_modification += "\tschema.remove_junction(\"" + block1 + "\", " + std::to_string(index_output1) + ", \"" + block2 + "\", " + std::to_string(index_input2) + ");\n";
 }
 
 void print_input_value(std::vector<int> port_value){
@@ -203,7 +263,7 @@ void print_output_value(std::vector<int> port_value){
 }
 
 void print_block(Block* block){
-    std::cout << "              " << block->get_name() << "\n";
+    std::cout << "                 " << block->get_name() << "\n";
     if(block->get_label() == "SUM" || block->get_label() == "SUB"){
         std::cout << "                 ╔═════╗\n"; //13 medzier
         print_input_value(block->get_input_by_index(0));
@@ -353,5 +413,8 @@ int Block_schema::simulate()
 
 std::string Block_schema::generate_sim_code()
 {
-    return "C++\n";
+    std::string code_start = "#include \"../src/API/block_schema.h\"\n#include <iostream>\n\nint main(){\n\tBlock_schema schema;\n";
+    
+    std::string code_end = "\tschema.simulate();\n}\n";
+    return code_start + this->code_modification + code_end;
 }

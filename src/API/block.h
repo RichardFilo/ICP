@@ -9,7 +9,7 @@ class Block
 
 public:
     Block();
-    ~Block();
+    // ~Block();
     void set_name(std::string name);
     void set_label(std::string label);
     void set_input_by_index(std::vector<int> input, int index);
