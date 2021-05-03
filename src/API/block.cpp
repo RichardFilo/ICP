@@ -7,7 +7,6 @@ Block::Block()
     this->inputs = {{0,0}};
     this->outputs = {{0,0}};
 }
-// Block::~Block(){}
 
 void Block::set_name(std::string name)
 {

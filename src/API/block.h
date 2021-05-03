@@ -9,7 +9,6 @@ class Block
 
 public:
     Block();
-    // ~Block();
     void set_name(std::string name);
     void set_label(std::string label);
     void set_input_by_index(std::vector<int> input, int index);
@@ -36,7 +35,6 @@ class Block_sum: public Block
 
 public:
     Block_sum(std::vector<std::vector<int>> inputs = {{0,0}, {0,0}}, std::string name = "");
-    ~Block_sum(){}
     void do_operation();
 };
 
@@ -45,7 +43,6 @@ class Block_sub: public Block
 
 public:
     Block_sub(std::vector<std::vector<int>> inputs = {{0,0}, {0,0}}, std::string name = "");
-    ~Block_sub(){}
     void do_operation();
 };
 
@@ -54,7 +51,6 @@ class Block_inc: public Block
 
 public:
     Block_inc(std::vector<std::vector<int>> inputs = {{0,0}}, std::string name = "");
-    ~Block_inc(){}
     void do_operation();
 };
 
@@ -63,7 +59,6 @@ class Block_dec: public Block
 
 public:
     Block_dec(std::vector<std::vector<int>> inputs = {{0,0}}, std::string name = "");
-    ~Block_dec(){}
     void do_operation();
 };
 
