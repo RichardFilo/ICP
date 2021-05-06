@@ -26,6 +26,12 @@ public:
     Block();
 
     /**
+     * @brief Destruuje vseobecny blok
+     * 
+     */
+    virtual ~Block(){}
+
+    /**
      * @brief Nastavi meno bloku
      * 
      * @param name meno
