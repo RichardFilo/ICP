@@ -420,7 +420,7 @@ int Block_schema::simulate()
 
 std::string Block_schema::generate_sim_code()
 {
-    std::string code_start = "#include \"../src/API/block_schema.h\"\n#include <iostream>\n\nint main(){\n\tBlock_schema schema;\n";
+    std::string code_start = "#include \"block_schema.h\"\n#include <iostream>\n\nint main(){\n\tBlock_schema schema;\n";
     
     std::string code_end = "\tschema.simulate();\n}\n";
     return code_start + this->code_modification + code_end;

@@ -486,7 +486,7 @@ $(function() {
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160; </div>
 <div class="line"><a name="l00421"></a><span class="lineno"><a class="line" href="classBlock__schema.html#aafb20501617f5284d68f0291d0825dc9">  421</a></span>&#160;std::string <a class="code" href="classBlock__schema.html#aafb20501617f5284d68f0291d0825dc9">Block_schema::generate_sim_code</a>()</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;{</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    std::string code_start = <span class="stringliteral">&quot;#include \&quot;../src/API/block_schema.h\&quot;\n#include &lt;iostream&gt;\n\nint main(){\n\tBlock_schema schema;\n&quot;</span>;</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    std::string code_start = <span class="stringliteral">&quot;#include \&quot;block_schema.h\&quot;\n#include &lt;iostream&gt;\n\nint main(){\n\tBlock_schema schema;\n&quot;</span>;</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    </div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    std::string code_end = <span class="stringliteral">&quot;\tschema.simulate();\n}\n&quot;</span>;</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <span class="keywordflow">return</span> code_start + this-&gt;code_modification + code_end;</div>
