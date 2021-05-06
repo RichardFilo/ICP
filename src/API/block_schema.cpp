@@ -1,3 +1,10 @@
+/**
+ * @file block_schema.cpp
+ * @author Richard Filo (xfilor00)
+ * @brief Trieda pre vytvorenie modifikaciu a naslednu simulaciu blokovej schemy
+ * @date 2021-05-06
+ */
+
 #include "block_schema.h"
 #include <iostream>
 

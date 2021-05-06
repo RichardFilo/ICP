@@ -1,3 +1,10 @@
+/**
+ * @file block.cpp
+ * @author Richard Filo (xfilor00)
+ * @brief Triedy pre vytvorenie blokov a pracu s nimi
+ * @date 2021-05-06
+ */
+
 #include "block.h"
 
 Block::Block()
