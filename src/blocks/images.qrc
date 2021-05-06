@@ -1,8 +1,0 @@
-<RCC>
-    <qresource prefix="/block_images">
-        <file>images/dec_block.png</file>
-        <file>images/inc_block.png</file>
-        <file>images/sub_block.png</file>
-        <file>images/sum_block.png</file>
-    </qresource>
-</RCC>

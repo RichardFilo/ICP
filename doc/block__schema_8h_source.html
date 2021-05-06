@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Block schema: Zdrojový súbor src/block_schema.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Block schema
+   </div>
+   <div id="projectbrief">Editor a interpret hierarchicky strukturovaných funkčních bloků</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generované programom Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Hľadať');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Hľadať');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">block_schema.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="block__schema_8h.html">Zobraziť dokumentáciu tohoto súboru.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef BLOCK_SCHEMA_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define BLOCK_SCHEMA_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="block_8h.html">block.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span>  <span class="comment">//pair</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structPort.html">   19</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span>{</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structPort.html#a49554c88479072b8aa00eefc8a6fe5af">   24</a></span>&#160;    std::string <a class="code" href="structPort.html#a49554c88479072b8aa00eefc8a6fe5af">block_name</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structPort.html#a14e87da55a9f807942fd92130e8e29b4">   30</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structPort.html#a14e87da55a9f807942fd92130e8e29b4">port_index</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;} <a class="code" href="structPort.html">Port</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classBlock__schema.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="classBlock__schema.html">Block_schema</a></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classBlock__schema.html#ace6d8c4fbb5b93176d4407c420be772e">Block_schema</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="classBlock__schema.html#a430f335c9155bba10fa4e0c083c11c19">~Block_schema</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::string <a class="code" href="classBlock__schema.html#aecf1fc864e1ff272fb6bf67093df346a">add_block</a>(<a class="code" href="block_8h.html#ac17ac97b3c3034af945d92e30cde90e4">Block_type</a> type);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classBlock__schema.html#affa9bf0376573ba267a292321450dd7d">remove_block</a>(std::string block_name);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classBlock__schema.html#a849353badad0d12b8f9048b0228e2f90">change_block_name</a>(std::string block_name, std::string name);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classBlock__schema.html#a8a71cd35d4ec0e5036f069c9b5c9d68c">set_block_input_by_index</a>(<span class="keywordtype">int</span> value, std::string block_name, <span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    std::string <a class="code" href="classBlock__schema.html#a2e89921a060cd77e9dd6b7492c9c509d">get_block_label</a>(std::string block_name);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    std::vector&lt;std::vector&lt;int&gt;&gt; <a class="code" href="classBlock__schema.html#ab4028f016291e7cf58b7988eac35b36b">get_block_inputs</a>(std::string block_name);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    std::vector&lt;std::vector&lt;int&gt;&gt; <a class="code" href="classBlock__schema.html#a27b9a001f7f87f5af1eecc70decc537e">get_block_outputs</a>(std::string block_name);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classBlock__schema.html#a8724cfbcae86af8f53541e80fad5ab10">add_junction</a>(std::string block1, <span class="keywordtype">int</span> index_output1, std::string block2, <span class="keywordtype">int</span> index_input2);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classBlock__schema.html#ae49e32bc8848887ce22e0c41ad65aaa9">remove_junction</a>(std::string block1, <span class="keywordtype">int</span> index_output1, std::string block2, <span class="keywordtype">int</span> index_input2);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classBlock__schema.html#a67ef655746505c6b8c84f6092e771291">simulate</a>();</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    std::string <a class="code" href="classBlock__schema.html#aafb20501617f5284d68f0291d0825dc9">generate_sim_code</a>();</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    std::unordered_map&lt;std::string, Block*&gt; blocks;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    std::vector&lt;std::pair&lt;Port, Port&gt;&gt; junctions;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    std::vector&lt;std::pair&lt;Port, std::vector&lt;int&gt;&gt;&gt; event_calendar;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    std::string code_modification;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    std::string gen_name(std::string prefix);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">void</span> remove_junc_of_block(std::string block_name);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordtype">void</span> remove_event_of_block(std::string block_name);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordtype">void</span> remove_event_of_port(std::string block, <span class="keywordtype">int</span> index_input);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordtype">void</span> change_name_in_junctions(std::string pre_name, std::string new_name);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordtype">void</span> change_name_in_calendar(std::string pre_name, std::string new_name);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;};</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="preprocessor">#endif // BLOCK_SCHEMA_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="ablock_8h_html"><div class="ttname"><a href="block_8h.html">block.h</a></div><div class="ttdoc">Triedy pre vytvorenie blokov a pracu s nimi.</div></div>
+<div class="ttc" id="ablock_8h_html_ac17ac97b3c3034af945d92e30cde90e4"><div class="ttname"><a href="block_8h.html#ac17ac97b3c3034af945d92e30cde90e4">Block_type</a></div><div class="ttdeci">Block_type</div><div class="ttdoc">Typ reprezentujuci dostupne druhy blokov.</div><div class="ttdef"><b>Definition:</b> <a href="block_8h_source.html#l00235">block.h:235</a></div></div>
+<div class="ttc" id="aclassBlock__schema_html_affa9bf0376573ba267a292321450dd7d"><div class="ttname"><a href="classBlock__schema.html#affa9bf0376573ba267a292321450dd7d">Block_schema::remove_block</a></div><div class="ttdeci">void remove_block(std::string block_name)</div><div class="ttdoc">Odstrani blok so vsetkymi jeho spojami zo schemy.</div><div class="ttdef"><b>Definition:</b> <a href="block__schema_8cpp_source.html#l00098">block_schema.cpp:98</a></div></div>
+<div class="ttc" id="aclassBlock__schema_html_a27b9a001f7f87f5af1eecc70decc537e"><div class="ttname"><a href="classBlock__schema.html#a27b9a001f7f87f5af1eecc70decc537e">Block_schema::get_block_outputs</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; int &gt; &gt; get_block_outputs(std::string block_name)</div><div class="ttdoc">Vrati zoznam vystupov daneho bloku.</div><div class="ttdef"><b>Definition:</b> <a href="block__schema_8cpp_source.html#l00192">block_schema.cpp:192</a></div></div>
+<div class="ttc" id="aclassBlock__schema_html_ace6d8c4fbb5b93176d4407c420be772e"><div class="ttname"><a href="classBlock__schema.html#ace6d8c4fbb5b93176d4407c420be772e">Block_schema::Block_schema</a></div><div class="ttdeci">Block_schema()</div><div class="ttdoc">Skonstruuje prazdne blokove schema.</div><div class="ttdef"><b>Definition:</b> <a href="block__schema_8cpp_source.html#l00011">block_schema.cpp:11</a></div></div>
+<div class="ttc" id="astructPort_html_a14e87da55a9f807942fd92130e8e29b4"><div class="ttname"><a href="structPort.html#a14e87da55a9f807942fd92130e8e29b4">Port::port_index</a></div><div class="ttdeci">int port_index</div><div class="ttdoc">index portu</div><div class="ttdef"><b>Definition:</b> <a href="block__schema_8h_source.html#l00030">block_schema.h:30</a></div></div>
+<div class="ttc" id="aclassBlock__schema_html_a2e89921a060cd77e9dd6b7492c9c509d"><div class="ttname"><a href="classBlock__schema.html#a2e89921a060cd77e9dd6b7492c9c509d">Block_schema::get_block_label</a></div><div class="ttdeci">std::string get_block_label(std::string block_name)</div><div class="ttdoc">Vrati popis daneho bloku.</div><div class="ttdef"><b>Definition:</b> <a href="block__schema_8cpp_source.html#l00174">block_schema.cpp:174</a></div></div>
+<div class="ttc" id="aclassBlock__schema_html_a67ef655746505c6b8c84f6092e771291"><div class="ttname"><a href="classBlock__schema.html#a67ef655746505c6b8c84f6092e771291">Block_schema::simulate</a></div><div class="ttdeci">int simulate()</div><div class="ttdoc">Realizuje simulaciu a priebezne vypisuje stavy.</div><div class="ttdef"><b>Definition:</b> <a href="block__schema_8cpp_source.html#l00295">block_schema.cpp:295</a></div></div>
+<div class="ttc" id="aclassBlock__schema_html_ab4028f016291e7cf58b7988eac35b36b"><div class="ttname"><a href="classBlock__schema.html#ab4028f016291e7cf58b7988eac35b36b">Block_schema::get_block_inputs</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; int &gt; &gt; get_block_inputs(std::string block_name)</div><div class="ttdoc">Vrati zoznam vstupov daneho bloku.</div><div class="ttdef"><b>Definition:</b> <a href="block__schema_8cpp_source.html#l00183">block_schema.cpp:183</a></div></div>
+<div class="ttc" id="astructPort_html"><div class="ttname"><a href="structPort.html">Port</a></div><div class="ttdoc">Struktura reprezentujuca port, tvorena z mena bloku a indexu portu.</div><div class="ttdef"><b>Definition:</b> <a href="block__schema_8h_source.html#l00019">block_schema.h:19</a></div></div>
+<div class="ttc" id="aclassBlock__schema_html"><div class="ttname"><a href="classBlock__schema.html">Block_schema</a></div><div class="ttdoc">Trieda reprezentujuca blokove schema.</div><div class="ttdef"><b>Definition:</b> <a href="block__schema_8h_source.html#l00037">block_schema.h:38</a></div></div>
+<div class="ttc" id="aclassBlock__schema_html_a8724cfbcae86af8f53541e80fad5ab10"><div class="ttname"><a href="classBlock__schema.html#a8724cfbcae86af8f53541e80fad5ab10">Block_schema::add_junction</a></div><div class="ttdeci">int add_junction(std::string block1, int index_output1, std::string block2, int index_input2)</div><div class="ttdoc">Prida spojenie medzi vystupom a vstupom danych blokov.</div><div class="ttdef"><b>Definition:</b> <a href="block__schema_8cpp_source.html#l00201">block_schema.cpp:201</a></div></div>
+<div class="ttc" id="astructPort_html_a49554c88479072b8aa00eefc8a6fe5af"><div class="ttname"><a href="structPort.html#a49554c88479072b8aa00eefc8a6fe5af">Port::block_name</a></div><div class="ttdeci">std::string block_name</div><div class="ttdoc">meno bloku</div><div class="ttdef"><b>Definition:</b> <a href="block__schema_8h_source.html#l00024">block_schema.h:24</a></div></div>
+<div class="ttc" id="aclassBlock__schema_html_a8a71cd35d4ec0e5036f069c9b5c9d68c"><div class="ttname"><a href="classBlock__schema.html#a8a71cd35d4ec0e5036f069c9b5c9d68c">Block_schema::set_block_input_by_index</a></div><div class="ttdeci">int set_block_input_by_index(int value, std::string block_name, int index)</div><div class="ttdoc">Nastavi dany vstup daneho bloku na hodnotu definovanu hodnotou.</div><div class="ttdef"><b>Definition:</b> <a href="block__schema_8cpp_source.html#l00156">block_schema.cpp:156</a></div></div>
+<div class="ttc" id="aclassBlock__schema_html_a430f335c9155bba10fa4e0c083c11c19"><div class="ttname"><a href="classBlock__schema.html#a430f335c9155bba10fa4e0c083c11c19">Block_schema::~Block_schema</a></div><div class="ttdeci">~Block_schema()</div><div class="ttdoc">Destruuje blokove schema s jeho vsetkymi blokmi.</div><div class="ttdef"><b>Definition:</b> <a href="block__schema_8cpp_source.html#l00019">block_schema.cpp:19</a></div></div>
+<div class="ttc" id="aclassBlock__schema_html_aecf1fc864e1ff272fb6bf67093df346a"><div class="ttname"><a href="classBlock__schema.html#aecf1fc864e1ff272fb6bf67093df346a">Block_schema::add_block</a></div><div class="ttdeci">std::string add_block(Block_type type)</div><div class="ttdoc">Prida blok daneho typu do schemy a vrati jeho meno.</div><div class="ttdef"><b>Definition:</b> <a href="block__schema_8cpp_source.html#l00040">block_schema.cpp:40</a></div></div>
+<div class="ttc" id="aclassBlock__schema_html_a849353badad0d12b8f9048b0228e2f90"><div class="ttname"><a href="classBlock__schema.html#a849353badad0d12b8f9048b0228e2f90">Block_schema::change_block_name</a></div><div class="ttdeci">int change_block_name(std::string block_name, std::string name)</div><div class="ttdoc">Pokusi sa o zmenu mena daneho bloku.</div><div class="ttdef"><b>Definition:</b> <a href="block__schema_8cpp_source.html#l00131">block_schema.cpp:131</a></div></div>
+<div class="ttc" id="aclassBlock__schema_html_aafb20501617f5284d68f0291d0825dc9"><div class="ttname"><a href="classBlock__schema.html#aafb20501617f5284d68f0291d0825dc9">Block_schema::generate_sim_code</a></div><div class="ttdeci">std::string generate_sim_code()</div><div class="ttdoc">Vrati kod v C++ realizujuci toto schema.</div><div class="ttdef"><b>Definition:</b> <a href="block__schema_8cpp_source.html#l00421">block_schema.cpp:421</a></div></div>
+<div class="ttc" id="aclassBlock__schema_html_ae49e32bc8848887ce22e0c41ad65aaa9"><div class="ttname"><a href="classBlock__schema.html#ae49e32bc8848887ce22e0c41ad65aaa9">Block_schema::remove_junction</a></div><div class="ttdeci">void remove_junction(std::string block1, int index_output1, std::string block2, int index_input2)</div><div class="ttdoc">Odstrani spojenie medzi vystupom a vstupom danych blokov.</div><div class="ttdef"><b>Definition:</b> <a href="block__schema_8cpp_source.html#l00237">block_schema.cpp:237</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generované programom&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

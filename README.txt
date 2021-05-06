@@ -1,3 +1,3 @@
 ICP projekt
 Varianta 2: Editor a interpret hierarchicky strukturovaných funkčních bloků
-Autory: Richard Filo a ...
+Autory: Richard Filo(xfilor00) a Tomas Lisicky(xlisic01)

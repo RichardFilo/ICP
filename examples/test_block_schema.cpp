@@ -1,4 +1,4 @@
-#include "../src/API/block_schema.h"
+#include "../src/block_schema.h"
 #include <iostream>
 
 int main(){
