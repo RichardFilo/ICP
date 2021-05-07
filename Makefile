@@ -25,7 +25,8 @@ src/block_schema.o: src/block_schema.cpp
 	$(CXX) $(CPPFLAGS) -o $@ -c $^
 
 clean:
-	$(RM) -r src/*.o $(TESTS) doc/* src/proj
+	$(RM) -r $(TESTS) doc/* src/proj
+	make -C src clean
 
 zip:
-	zip 2-xfilor00-xlisic01.zip *
+	zip -r 2-xfilor00-xlisic01.zip *
