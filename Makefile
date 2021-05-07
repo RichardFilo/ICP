@@ -28,5 +28,5 @@ clean:
 	$(RM) -r $(TESTS) doc/* src/proj
 	make -C src clean
 
-zip:
+pack:
 	zip -r 2-xfilor00-xlisic01.zip *
