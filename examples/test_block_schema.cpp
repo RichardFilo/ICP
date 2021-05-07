@@ -1,3 +1,10 @@
+/**
+ * @file test_block_schema.cpp
+ * @author Richard Filo (xfilor00)
+ * @brief Test na kontrolu funkcnosti modulu blok_schema
+ * @date 2021-05-06
+ */
+
 #include "../src/block_schema.h"
 #include <iostream>
 

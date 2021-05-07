@@ -1,3 +1,10 @@
+/**
+ * @file test_block.cpp
+ * @author Richard Filo (xfilor00)
+ * @brief Test na kontrolu funkcnosti modulu blok
+ * @date 2021-05-06
+ */
+
 #include "../src/block.h"
 #include <iostream>
 

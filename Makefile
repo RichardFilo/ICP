@@ -26,3 +26,6 @@ src/block_schema.o: src/block_schema.cpp
 
 clean:
 	$(RM) -r src/*.o $(TESTS) doc/* src/proj
+
+zip:
+	zip 2-xfilor00-xlisic01.zip *

@@ -1,4 +1,11 @@
-#include "block_schema.h"
+/**
+ * @file code.cpp
+ * @author Vygenerovane nasim projektom
+ * @brief Testovaci priklad vygenerovanej blokovej schemy (preklad: g++ code.cpp ../src/block_schema.o ../src/block.o)
+ * @date 2021-05-06
+ */
+
+#include "../src/block_schema.h"
 #include <iostream>
 
 int main(){
