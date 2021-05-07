@@ -11,5 +11,6 @@ var searchData=
   ['block_5fschema_2eh_10',['block_schema.h',['../block__schema_8h.html',1,'']]],
   ['block_5fsub_11',['Block_sub',['../classBlock__sub.html',1,'Block_sub'],['../classBlock__sub.html#a434adbc4888ecac97df5122ec5b50c13',1,'Block_sub::Block_sub()']]],
   ['block_5fsum_12',['Block_sum',['../classBlock__sum.html',1,'Block_sum'],['../classBlock__sum.html#aeb76219122a46b9673d5035de7c3ebdd',1,'Block_sum::Block_sum()']]],
-  ['block_5ftype_13',['Block_type',['../block_8h.html#ac17ac97b3c3034af945d92e30cde90e4',1,'block.h']]]
+  ['block_5ftype_13',['Block_type',['../block_8h.html#ac17ac97b3c3034af945d92e30cde90e4',1,'block.h']]],
+  ['boundingrect_14',['boundingRect',['../classGraphicsBlock.html#a7323341515a0c0fbdd639d19dc5c2862',1,'GraphicsBlock::boundingRect()'],['../classPin.html#a57a321e2d6e0d3abe12ec0494613fa86',1,'Pin::boundingRect()']]]
 ];

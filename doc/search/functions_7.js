@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['_7eblock_89',['~Block',['../classBlock.html#a9f0026f5d2dafca3c101e70e4b34780f',1,'Block']]],
-  ['_7eblock_5fschema_90',['~Block_schema',['../classBlock__schema.html#a430f335c9155bba10fa4e0c083c11c19',1,'Block_schema']]]
+  ['paint_107',['paint',['../classGraphicsBlock.html#a0fbe49f9165b2b05eb6edeced921494a',1,'GraphicsBlock::paint()'],['../classPin.html#a613cfa004801fe28649a0e602549ca1e',1,'Pin::paint()']]],
+  ['pin_108',['Pin',['../classPin.html#a5906af19a5897cd3f843f5f4876e4dda',1,'Pin']]]
 ];

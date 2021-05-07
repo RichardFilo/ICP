@@ -16,7 +16,7 @@ CC            = gcc
 CXX           = g++
 DEFINES       = -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -O2 -Wall -Wextra -D_REENTRANT -fPIC $(DEFINES)
-CXXFLAGS      = -pipe -O2 -std=gnu++11 -Wall -Wextra -D_REENTRANT -fPIC $(DEFINES)
+CXXFLAGS      = -pipe -O2 -std=gnu++1z -Wall -Wextra -D_REENTRANT -fPIC $(DEFINES)
 INCPATH       = -I. -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtWidgets -isystem /usr/include/qt5/QtGui -isystem /usr/include/qt5/QtCore -I. -I. -I/../lib64/qt5/mkspecs/linux-g++
 QMAKE         = /usr/bin/qmake-qt5
 DEL_FILE      = rm -f
@@ -52,14 +52,18 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = block.cpp \
+SOURCES       = GraphicsBlock.cpp \
+		block.cpp \
 		block_schema.cpp \
 		main.cpp \
-		mainwindow.cpp moc_mainwindow.cpp
-OBJECTS       = block.o \
+		mainwindow.cpp \
+		pin.cpp moc_mainwindow.cpp
+OBJECTS       = GraphicsBlock.o \
+		block.o \
 		block_schema.o \
 		main.o \
 		mainwindow.o \
+		pin.o \
 		moc_mainwindow.o
 DIST          = /../lib64/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib64/qt5/mkspecs/common/unix.conf \
@@ -230,12 +234,16 @@ DIST          = /../lib64/qt5/mkspecs/features/spec_pre.prf \
 		/../lib64/qt5/mkspecs/features/exceptions.prf \
 		/../lib64/qt5/mkspecs/features/yacc.prf \
 		/../lib64/qt5/mkspecs/features/lex.prf \
-		proj.pro block.h \
+		proj.pro GraphicsBlock.h \
+		block.h \
 		block_schema.h \
-		mainwindow.h block.cpp \
+		mainwindow.h \
+		pin.h GraphicsBlock.cpp \
+		block.cpp \
 		block_schema.cpp \
 		main.cpp \
-		mainwindow.cpp
+		mainwindow.cpp \
+		pin.cpp
 QMAKE_TARGET  = proj
 DESTDIR       = 
 TARGET        = proj
@@ -603,8 +611,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /../lib64/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents block.h block_schema.h mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents block.cpp block_schema.cpp main.cpp mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents GraphicsBlock.h block.h block_schema.h mainwindow.h pin.h $(DISTDIR)/
+	$(COPY_FILE) --parents GraphicsBlock.cpp block.cpp block_schema.cpp main.cpp mainwindow.cpp pin.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
 
 
@@ -635,7 +643,7 @@ compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc_predefs.h
 moc_predefs.h: /../lib64/qt5/mkspecs/features/data/dummy.cpp
-	g++ -pipe -O2 -std=gnu++11 -Wall -Wextra -dM -E -o moc_predefs.h /../lib64/qt5/mkspecs/features/data/dummy.cpp
+	g++ -pipe -O2 -std=gnu++1z -Wall -Wextra -dM -E -o moc_predefs.h /../lib64/qt5/mkspecs/features/data/dummy.cpp
 
 compiler_moc_header_make_all: moc_mainwindow.cpp
 compiler_moc_header_clean:
@@ -643,6 +651,8 @@ compiler_moc_header_clean:
 moc_mainwindow.cpp: mainwindow.h \
 		block_schema.h \
 		block.h \
+		GraphicsBlock.h \
+		pin.h \
 		moc_predefs.h \
 		/../lib64/qt5/bin/moc
 	/../lib64/qt5/bin/moc $(DEFINES) --include /home/rfilo/Documents/skola/ICP/src/moc_predefs.h -I/../lib64/qt5/mkspecs/linux-g++ -I/home/rfilo/Documents/skola/ICP/src -I/usr/include/qt5 -I/usr/include/qt5/QtWidgets -I/usr/include/qt5/QtGui -I/usr/include/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/c++/10/x86_64-redhat-linux -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-redhat-linux/10/include -I/usr/local/include -I/usr/include mainwindow.h -o moc_mainwindow.cpp
@@ -668,6 +678,12 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
+GraphicsBlock.o: GraphicsBlock.cpp GraphicsBlock.h \
+		block_schema.h \
+		block.h \
+		pin.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o GraphicsBlock.o GraphicsBlock.cpp
+
 block.o: block.cpp block.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o block.o block.cpp
 
@@ -677,14 +693,24 @@ block_schema.o: block_schema.cpp block_schema.h \
 
 main.o: main.cpp mainwindow.h \
 		block_schema.h \
-		block.h
+		block.h \
+		GraphicsBlock.h \
+		pin.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 mainwindow.o: mainwindow.cpp mainwindow.h \
 		block_schema.h \
 		block.h \
+		GraphicsBlock.h \
+		pin.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
+
+pin.o: pin.cpp pin.h \
+		block_schema.h \
+		block.h \
+		GraphicsBlock.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o pin.o pin.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

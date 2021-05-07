@@ -10,11 +10,29 @@
     <x>0</x>
     <y>0</y>
     <width>1280</width>
-    <height>720</height>
+    <height>800</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1280</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1280</width>
+    <height>800</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Block schema creator</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="horizontalLayoutWidget">
@@ -42,48 +60,6 @@
         </size>
        </property>
       </spacer>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="mouseTracking">
-        <bool>false</bool>
-       </property>
-       <property name="tabletTracking">
-        <bool>false</bool>
-       </property>
-       <property name="text">
-        <string>Move</string>
-       </property>
-       <property name="checkable">
-        <bool>true</bool>
-       </property>
-       <property name="checked">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_2">
-       <property name="text">
-        <string>Line</string>
-       </property>
-       <property name="checkable">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_3">
-       <property name="text">
-        <string>Delete</string>
-       </property>
-       <property name="checkable">
-        <bool>true</bool>
-       </property>
-      </widget>
      </item>
      <item>
       <widget class="QPushButton" name="pushButton_4">
@@ -126,6 +102,29 @@
        </property>
       </spacer>
      </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_8">
+       <property name="text">
+        <string>Simulate</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Minimum</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
     </layout>
    </widget>
    <widget class="QGraphicsView" name="graphicsView">
@@ -134,7 +133,7 @@
       <x>0</x>
       <y>40</y>
       <width>1280</width>
-      <height>641</height>
+      <height>710</height>
      </rect>
     </property>
    </widget>
@@ -145,7 +144,7 @@
      <x>0</x>
      <y>0</y>
      <width>1280</width>
-     <height>21</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>

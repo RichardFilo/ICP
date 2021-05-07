@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Block schema: Zdrojový súbor src/GraphicsBlock.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Block schema
+   </div>
+   <div id="projectbrief">Editor a interpret hierarchicky strukturovaných funkčních bloků</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generované programom Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Hľadať');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Hľadať');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">GraphicsBlock.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="GraphicsBlock_8h.html">Zobraziť dokumentáciu tohoto súboru.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef GRAPHICSBLOCK_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define GRAPHICSBLOCK_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="block__schema_8h.html">block_schema.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pin_8h.html">pin.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;QGraphicsItem&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;QPainter&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;QGraphicsSceneMouseEvent&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;QMouseEvent&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classGraphicsBlock.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classGraphicsBlock.html">GraphicsBlock</a> : <span class="keyword">public</span> QGraphicsItem {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="classGraphicsBlock.html#abbe552977651deeb88c517d7ec12331f">GraphicsBlock</a>(<a class="code" href="classBlock__schema.html">Block_schema</a> *arg_schema, <a class="code" href="block_8h.html#ac17ac97b3c3034af945d92e30cde90e4">Block_type</a> arg_type, QGraphicsItem *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        std::string var_block_name;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classBlock__schema.html">Block_schema</a> *obj_schema;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="classPin.html">Pin</a> *input0;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="classPin.html">Pin</a> *input1;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="classPin.html">Pin</a> *output0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        QBrush m_brush;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">void</span> hoverEnterEvent(QGraphicsSceneHoverEvent *);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">void</span> hoverLeaveEvent(QGraphicsSceneHoverEvent *);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        QRectF <a class="code" href="classGraphicsBlock.html#a7323341515a0c0fbdd639d19dc5c2862">boundingRect</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classGraphicsBlock.html#a0fbe49f9165b2b05eb6edeced921494a">paint</a>(QPainter *painter, <span class="keyword">const</span> QStyleOptionGraphicsItem *, QWidget *);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classGraphicsBlock.html#a073fb7664373eab69baf4f16d8c96556">mouseDoubleClickEvent</a>(QGraphicsSceneMouseEvent *event);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif // GRAPHICSBLOCK_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="ablock_8h_html_ac17ac97b3c3034af945d92e30cde90e4"><div class="ttname"><a href="block_8h.html#ac17ac97b3c3034af945d92e30cde90e4">Block_type</a></div><div class="ttdeci">Block_type</div><div class="ttdoc">Typ reprezentujuci dostupne druhy blokov.</div><div class="ttdef"><b>Definition:</b> <a href="block_8h_source.html#l00235">block.h:235</a></div></div>
+<div class="ttc" id="aclassPin_html"><div class="ttname"><a href="classPin.html">Pin</a></div><div class="ttdoc">Trieda reprezentujuca graficku podobu portu.</div><div class="ttdef"><b>Definition:</b> <a href="pin_8h_source.html#l00018">pin.h:19</a></div></div>
+<div class="ttc" id="aclassBlock__schema_html"><div class="ttname"><a href="classBlock__schema.html">Block_schema</a></div><div class="ttdoc">Trieda reprezentujuca blokove schema.</div><div class="ttdef"><b>Definition:</b> <a href="block__schema_8h_source.html#l00037">block_schema.h:38</a></div></div>
+<div class="ttc" id="aclassGraphicsBlock_html"><div class="ttname"><a href="classGraphicsBlock.html">GraphicsBlock</a></div><div class="ttdoc">The GraphicsBlock class - trieda grafického bloku.</div><div class="ttdef"><b>Definition:</b> <a href="GraphicsBlock_8h_source.html#l00022">GraphicsBlock.h:22</a></div></div>
+<div class="ttc" id="ablock__schema_8h_html"><div class="ttname"><a href="block__schema_8h.html">block_schema.h</a></div><div class="ttdoc">Trieda pre vytvorenie modifikaciu a naslednu simulaciu blokovej schemy.</div></div>
+<div class="ttc" id="aclassGraphicsBlock_html_a0fbe49f9165b2b05eb6edeced921494a"><div class="ttname"><a href="classGraphicsBlock.html#a0fbe49f9165b2b05eb6edeced921494a">GraphicsBlock::paint</a></div><div class="ttdeci">void paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)</div><div class="ttdoc">paint - vykreslí blok na vymedzenú plochu</div><div class="ttdef"><b>Definition:</b> <a href="GraphicsBlock_8cpp_source.html#l00044">GraphicsBlock.cpp:44</a></div></div>
+<div class="ttc" id="apin_8h_html"><div class="ttname"><a href="pin_8h.html">pin.h</a></div><div class="ttdoc">Trieda pre pracu s grafickou reprezentaciou portu.</div></div>
+<div class="ttc" id="aclassGraphicsBlock_html_abbe552977651deeb88c517d7ec12331f"><div class="ttname"><a href="classGraphicsBlock.html#abbe552977651deeb88c517d7ec12331f">GraphicsBlock::GraphicsBlock</a></div><div class="ttdeci">GraphicsBlock(Block_schema *arg_schema, Block_type arg_type, QGraphicsItem *parent=nullptr)</div><div class="ttdoc">GraphicsBlock.</div><div class="ttdef"><b>Definition:</b> <a href="GraphicsBlock_8cpp_source.html#l00011">GraphicsBlock.cpp:11</a></div></div>
+<div class="ttc" id="aclassGraphicsBlock_html_a073fb7664373eab69baf4f16d8c96556"><div class="ttname"><a href="classGraphicsBlock.html#a073fb7664373eab69baf4f16d8c96556">GraphicsBlock::mouseDoubleClickEvent</a></div><div class="ttdeci">void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event)</div><div class="ttdoc">Zmeni meno bloku.</div><div class="ttdef"><b>Definition:</b> <a href="GraphicsBlock_8cpp_source.html#l00067">GraphicsBlock.cpp:67</a></div></div>
+<div class="ttc" id="aclassGraphicsBlock_html_a7323341515a0c0fbdd639d19dc5c2862"><div class="ttname"><a href="classGraphicsBlock.html#a7323341515a0c0fbdd639d19dc5c2862">GraphicsBlock::boundingRect</a></div><div class="ttdeci">QRectF boundingRect() const</div><div class="ttdoc">boundingRect - vymedzí hranice plochy bloku</div><div class="ttdef"><b>Definition:</b> <a href="GraphicsBlock_8cpp_source.html#l00040">GraphicsBlock.cpp:40</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generované programom&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['set_5fblock_5finput_5fby_5findex_84',['set_block_input_by_index',['../classBlock__schema.html#a8a71cd35d4ec0e5036f069c9b5c9d68c',1,'Block_schema']]],
-  ['set_5finput_5fby_5findex_85',['set_input_by_index',['../classBlock.html#accfc4e60613bb82e5f1e3ac7d8626937',1,'Block']]],
-  ['set_5flabel_86',['set_label',['../classBlock.html#a7a86f367c19b5dc6acd3487451f65571',1,'Block']]],
-  ['set_5fname_87',['set_name',['../classBlock.html#a93de9b48d642bfdeeab1cba1747a5885',1,'Block']]],
-  ['simulate_88',['simulate',['../classBlock__schema.html#a67ef655746505c6b8c84f6092e771291',1,'Block_schema']]]
+  ['mainwindow_104',['MainWindow',['../classMainWindow.html#a996c5a2b6f77944776856f08ec30858d',1,'MainWindow']]],
+  ['mousedoubleclickevent_105',['mouseDoubleClickEvent',['../classGraphicsBlock.html#a073fb7664373eab69baf4f16d8c96556',1,'GraphicsBlock::mouseDoubleClickEvent()'],['../classPin.html#a98c06e7ee5c20b8e68ddb614ad76f9dd',1,'Pin::mouseDoubleClickEvent()']]],
+  ['mousepressevent_106',['mousePressEvent',['../classPin.html#abab8426a717fd6acd99a351a12f88695',1,'Pin']]]
 ];

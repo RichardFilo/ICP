@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Block schema: Zdrojový súbor src/pin.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Block schema
+   </div>
+   <div id="projectbrief">Editor a interpret hierarchicky strukturovaných funkčních bloků</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generované programom Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Hľadať');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Hľadať');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">pin.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="pin_8h.html">Zobraziť dokumentáciu tohoto súboru.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef PIN_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define PIN_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QGraphicsItem&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;QPainter&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="block__schema_8h.html">block_schema.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classPin.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPin.html">Pin</a> : <span class="keyword">public</span> QGraphicsItem</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classPin.html#a5906af19a5897cd3f843f5f4876e4dda">Pin</a>( <a class="code" href="classBlock__schema.html">Block_schema</a> *arg_schema, <span class="keywordtype">int</span> index, <span class="keywordtype">bool</span> output, QGraphicsItem* parent = 0);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    QRectF <a class="code" href="classPin.html#a57a321e2d6e0d3abe12ec0494613fa86">boundingRect</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPin.html#ad43048384c6ae2e97f5ed92470b92280">hoverEnterEvent</a>(QGraphicsSceneHoverEvent *);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPin.html#a49e2fcf1e3a8a9c5bc6a0bbd56f727fd">hoverLeaveEvent</a>(QGraphicsSceneHoverEvent *);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPin.html#a613cfa004801fe28649a0e602549ca1e">paint</a>(QPainter *p, <span class="keyword">const</span> QStyleOptionGraphicsItem *, QWidget *);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPin.html#abab8426a717fd6acd99a351a12f88695">mousePressEvent</a>(QGraphicsSceneMouseEvent *event);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPin.html#a98c06e7ee5c20b8e68ddb614ad76f9dd">mouseDoubleClickEvent</a>(QGraphicsSceneMouseEvent *event);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="classBlock__schema.html">Block_schema</a>* obj_schema;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    QBrush m_brush;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">int</span> index;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    std::string* block_name;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">bool</span> output;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif // PIN_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassPin_html_a98c06e7ee5c20b8e68ddb614ad76f9dd"><div class="ttname"><a href="classPin.html#a98c06e7ee5c20b8e68ddb614ad76f9dd">Pin::mouseDoubleClickEvent</a></div><div class="ttdeci">void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event)</div><div class="ttdoc">Ak ide o vstupny pin tak nastavy hodnotu.</div><div class="ttdef"><b>Definition:</b> <a href="pin_8cpp_source.html#l00080">pin.cpp:80</a></div></div>
+<div class="ttc" id="aclassPin_html_abab8426a717fd6acd99a351a12f88695"><div class="ttname"><a href="classPin.html#abab8426a717fd6acd99a351a12f88695">Pin::mousePressEvent</a></div><div class="ttdeci">void mousePressEvent(QGraphicsSceneMouseEvent *event)</div><div class="ttdoc">Vytvori spojenie.</div><div class="ttdef"><b>Definition:</b> <a href="pin_8cpp_source.html#l00050">pin.cpp:50</a></div></div>
+<div class="ttc" id="aclassPin_html"><div class="ttname"><a href="classPin.html">Pin</a></div><div class="ttdoc">Trieda reprezentujuca graficku podobu portu.</div><div class="ttdef"><b>Definition:</b> <a href="pin_8h_source.html#l00018">pin.h:19</a></div></div>
+<div class="ttc" id="aclassPin_html_a5906af19a5897cd3f843f5f4876e4dda"><div class="ttname"><a href="classPin.html#a5906af19a5897cd3f843f5f4876e4dda">Pin::Pin</a></div><div class="ttdeci">Pin(Block_schema *arg_schema, int index, bool output, QGraphicsItem *parent=0)</div><div class="ttdoc">Skonstruuje objekt Pin.</div><div class="ttdef"><b>Definition:</b> <a href="pin_8cpp_source.html#l00015">pin.cpp:15</a></div></div>
+<div class="ttc" id="aclassBlock__schema_html"><div class="ttname"><a href="classBlock__schema.html">Block_schema</a></div><div class="ttdoc">Trieda reprezentujuca blokove schema.</div><div class="ttdef"><b>Definition:</b> <a href="block__schema_8h_source.html#l00037">block_schema.h:38</a></div></div>
+<div class="ttc" id="aclassPin_html_a613cfa004801fe28649a0e602549ca1e"><div class="ttname"><a href="classPin.html#a613cfa004801fe28649a0e602549ca1e">Pin::paint</a></div><div class="ttdeci">void paint(QPainter *p, const QStyleOptionGraphicsItem *, QWidget *)</div><div class="ttdoc">Vypreslenie pinu.</div><div class="ttdef"><b>Definition:</b> <a href="pin_8cpp_source.html#l00043">pin.cpp:43</a></div></div>
+<div class="ttc" id="aclassPin_html_a49e2fcf1e3a8a9c5bc6a0bbd56f727fd"><div class="ttname"><a href="classPin.html#a49e2fcf1e3a8a9c5bc6a0bbd56f727fd">Pin::hoverLeaveEvent</a></div><div class="ttdeci">void hoverLeaveEvent(QGraphicsSceneHoverEvent *)</div><div class="ttdoc">Zmena farby pri vystupe mysi prec z objektu.</div><div class="ttdef"><b>Definition:</b> <a href="pin_8cpp_source.html#l00037">pin.cpp:37</a></div></div>
+<div class="ttc" id="ablock__schema_8h_html"><div class="ttname"><a href="block__schema_8h.html">block_schema.h</a></div><div class="ttdoc">Trieda pre vytvorenie modifikaciu a naslednu simulaciu blokovej schemy.</div></div>
+<div class="ttc" id="aclassPin_html_a57a321e2d6e0d3abe12ec0494613fa86"><div class="ttname"><a href="classPin.html#a57a321e2d6e0d3abe12ec0494613fa86">Pin::boundingRect</a></div><div class="ttdeci">QRectF boundingRect() const</div><div class="ttdoc">Vracia plochu kam sa bude vykreslovat.</div><div class="ttdef"><b>Definition:</b> <a href="pin_8cpp_source.html#l00026">pin.cpp:26</a></div></div>
+<div class="ttc" id="aclassPin_html_ad43048384c6ae2e97f5ed92470b92280"><div class="ttname"><a href="classPin.html#ad43048384c6ae2e97f5ed92470b92280">Pin::hoverEnterEvent</a></div><div class="ttdeci">void hoverEnterEvent(QGraphicsSceneHoverEvent *)</div><div class="ttdoc">Zmena farby pri vstupe mysi nad objekt.</div><div class="ttdef"><b>Definition:</b> <a href="pin_8cpp_source.html#l00031">pin.cpp:31</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generované programom&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

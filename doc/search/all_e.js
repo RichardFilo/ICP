@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['ui_5fmainwindow_43',['Ui_MainWindow',['../classUi__MainWindow.html',1,'']]]
+  ['_7eblock_56',['~Block',['../classBlock.html#a9f0026f5d2dafca3c101e70e4b34780f',1,'Block']]],
+  ['_7eblock_5fschema_57',['~Block_schema',['../classBlock__schema.html#a430f335c9155bba10fa4e0c083c11c19',1,'Block_schema']]]
 ];

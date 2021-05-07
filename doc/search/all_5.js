@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['inputs_27',['inputs',['../classBlock.html#a76cdd42f771a244f1c7cb9b3afaf0e3d',1,'Block']]]
+  ['hoverenterevent_31',['hoverEnterEvent',['../classPin.html#ad43048384c6ae2e97f5ed92470b92280',1,'Pin']]],
+  ['hoverleaveevent_32',['hoverLeaveEvent',['../classPin.html#a49e2fcf1e3a8a9c5bc6a0bbd56f727fd',1,'Pin']]]
 ];
